@@ -4,13 +4,13 @@
   "description": "React tree component",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port=8080",
-    "deploy": "rm -rf .publish && npm run build && github-pages-deploy",
-    "pretest": "npm run build",
-    "prepublish": "npm test",
-    "test": "mocha",
+    "start": "/node_modules/babel-cli/bin/babel.js lib --out-dir dist",
     "build": "npx babel lib --out-dir dist",
-    "preinstall": "npm install --ignore-scripts && npm run build"
+    "deploy": "rm -rf .publish && npm run build && github-pages-deploy",
+    "preinstall": "npm install --ignore-scripts && npm run build",
+    "pretest": "npm run build",
+    "prepublish": "npm run build",
+    "test": "mocha"
   },
   "github-pages-deploy": {
     "src": "example"
